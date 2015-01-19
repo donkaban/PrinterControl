@@ -65,8 +65,8 @@ static std::vector<button> buttons;
 
 void b1() {system("./reboot_script.sh");done=true;}
 void b2() {system("./reset_script.sh");done=true;}
-void b3() {done = true;}
-
+void b3() {system("./shutdown_script.sh");done=true;}
+void b4() {done = true;}
 
 void init(uint w, uint h)
 {
@@ -105,7 +105,9 @@ void init(uint w, uint h)
 
     buttons.push_back(button(600,50,  150, 75, "REBOOT", b1));
     buttons.push_back(button(600,150, 150, 75, "RESET", b2));
-    buttons.push_back(button(600,350, 150, 75, "QUIT", b3));
+    buttons.push_back(button(600,250, 150, 75, "SHUTDOWN", b3));
+    buttons.push_back(button(600,350, 150, 75, "QUIT", b4));
+
   
     XFlush(display);
 }
